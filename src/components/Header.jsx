@@ -66,30 +66,16 @@ export default function Header() {
 
       <div className="info">
         <div className="lastSub">
-  <iframe
-    src="https://botrix.live/widgets/labels?bid=zlh2vuUnZi4VTrxmCBwLcg&text=Son+abone%3A+%7Bvalue%7D&font=Arial&type=ultimoSub&platform=kick"
-    style={{
-      width: "260px",
-      height: "40px",
-      border: "none",
-      background: "transparent",
-      overflow: "hidden",
-    }}
-  />
-</div>
+          ⭐ <strong>Son Abone</strong>
+          <br />
+          Yok
+        </div>
 
         <div className="lastGift">
-  <iframe
-    src="https://botrix.live/widgets/labels?bid=zlh2vuUnZi4VTrxmCBwLcg&text=Son+abonelik+hediye+eden%3A+%7Bvalue%7D&font=Arial&type=ultimoGift&platform=kick"
-    style={{
-      width: "260px",
-      height: "40px",
-      border: "none",
-      background: "transparent",
-      overflow: "hidden",
-    }}
-  />
-</div>
+          🎁 <strong>Son Hediye Abone</strong>
+          <br />
+          Yok
+        </div>
 
         <div>📍 Manavgat / Antalya</div>
 
