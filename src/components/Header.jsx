@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { getWeather } from "../services/weatherService";
+import { watchSpeed } from "../services/gpsService";
 
 export default function Header() {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
+
+  const [speed, setSpeed] = useState(0);
 
   const [weather, setWeather] = useState({
     temperature: "--",
@@ -51,12 +54,17 @@ export default function Header() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    watchSpeed((kmh) => {
+      setSpeed(kmh);
+    });
+  }, []);
+
   return (
     <div className="header">
       <h1>kick.com/tokucak</h1>
 
       <div className="info">
-
         <div className="lastSub">
           ⭐ <strong>Son Abone</strong>
           <br />
@@ -75,12 +83,11 @@ export default function Header() {
 
         <div>💧 %{weather.humidity}</div>
 
-        <div>🏍️ Hız: -- km/sa</div>
+        <div>🏍️ Hız: {speed} km/sa</div>
 
         <div>🕒 {time}</div>
 
         <div>📅 {date}</div>
-
       </div>
     </div>
   );
