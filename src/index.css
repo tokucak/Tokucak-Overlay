@@ -286,4 +286,11 @@ body,
 
     }
 
+}.lastSub,
+.lastGift,
+.lastFollow{
+    display:flex;
+    align-items:center;
+    height:38px;
+    font-size:22px;
 }

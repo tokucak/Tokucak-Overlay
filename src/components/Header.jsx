@@ -65,16 +65,17 @@ export default function Header() {
       <h1>kick.com/tokucak</h1>
 
       <div className="info">
+
         <div className="lastSub">
-          ⭐ <strong>Son Abone</strong>
-          <br />
-          Yok
+          ⭐
         </div>
 
         <div className="lastGift">
-          🎁 <strong>Son Hediye Abone</strong>
-          <br />
-          Yok
+          🎁
+        </div>
+
+        <div className="lastFollow">
+          ❤️
         </div>
 
         <div>📍 Manavgat / Antalya</div>
@@ -88,6 +89,7 @@ export default function Header() {
         <div>🕒 {time}</div>
 
         <div>📅 {date}</div>
+
       </div>
     </div>
   );
