@@ -32,17 +32,33 @@ body,
 }
 
 .header h1{
-    color:#34d399;
+     color:#34d399;
+
     font-size:30px;
+
     font-weight:bold;
+
+    margin-bottom:15px;
+
+    text-shadow:
+
+        0 0 10px rgba(52,211,153,.45);
 }
 
 .info{
-    margin-top:15px;
-    display:flex;
+   display:flex;
+
     flex-direction:column;
-    gap:8px;
+
+    gap:10px;
+
     font-size:18px;
+
+    color:#fff;
+
+    text-shadow:
+
+        1px 1px 3px rgba(0,0,0,.75);
 }
 
 .lastSub,
