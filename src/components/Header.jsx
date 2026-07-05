@@ -8,7 +8,6 @@ export default function Header() {
   const [weather, setWeather] = useState({
     temperature: "--",
     humidity: "--",
-    wind: "--",
   });
 
   useEffect(() => {
@@ -76,7 +75,7 @@ export default function Header() {
 
         <div>💧 %{weather.humidity}</div>
 
-        <div>🌬️ {weather.wind} km/s</div>
+        <div>🏍️ Hız: -- km/sa</div>
 
         <div>🕒 {time}</div>
 
