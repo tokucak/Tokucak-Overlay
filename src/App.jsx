@@ -1,9 +1,9 @@
 import Header from "./components/Header";
 
-const pullKey = "BURAYA_KENDI_PULL_KEYIN";
+const pullKey = "ak6fu9l6rf4x4kav";
 
 const rtirlMapUrl =
-  `https://overlays.rtirl.com/generic.html?key=${ak6fu9l6rf4x4kav}&zoom=13&lang=en`;
+  `https://overlays.rtirl.com/generic.html?key=${pullKey}&zoom=13&lang=en`;
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
           className="rtirlMap"
           src={rtirlMapUrl}
           title="RealtimeIRL GPS Map"
+          allow="geolocation"
         />
       </div>
     </div>
