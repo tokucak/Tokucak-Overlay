@@ -5,7 +5,7 @@ import * as RTIRL from "@rtirl/api";
 
 const pullKey = "ak6fu9l6rf4x4kav";
 
-export default function RealtimeMap() {
+export default function RealtimeMap({ onSpeedChange }) {
   const mapRef = useRef(null);
   const mapInstance = useRef(null);
   const markerRef = useRef(null);
@@ -21,9 +21,12 @@ export default function RealtimeMap() {
       zoom: 13,
     });
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-    }).addTo(map);
+    L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        maxZoom: 19,
+      }
+    ).addTo(map);
 
     mapInstance.current = map;
 
@@ -48,12 +51,10 @@ export default function RealtimeMap() {
 
       const position = [latitude, longitude];
 
-      // Haritayı GPS noktasının TAM ORTASINA getir
       map.setView(position, 13, {
         animate: false,
       });
 
-      // GPS noktası
       if (!markerRef.current) {
         markerRef.current = L.circleMarker(position, {
           radius: 7,
@@ -64,6 +65,29 @@ export default function RealtimeMap() {
         }).addTo(map);
       } else {
         markerRef.current.setLatLng(position);
+      }
+
+      let speed = null;
+
+      if (typeof data.speed === "number") {
+        speed = data.speed;
+      }
+
+      else if (
+        typeof data.location.speed === "number"
+      ) {
+        speed = data.location.speed;
+      }
+
+      if (typeof speed === "number") {
+        const speedKmh =
+          speed < 100
+            ? speed * 3.6
+            : speed;
+
+        onSpeedChange?.(
+          Math.max(0, Math.round(speedKmh))
+        );
       }
     });
 
@@ -80,7 +104,7 @@ export default function RealtimeMap() {
 
       markerRef.current = null;
     };
-  }, []);
+  }, [onSpeedChange]);
 
   return (
     <div

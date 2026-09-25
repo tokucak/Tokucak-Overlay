@@ -21,6 +21,7 @@ body,
     color:white;
 }
 
+
 /* =======================
    HEADER
 ======================= */
@@ -70,6 +71,7 @@ body,
     font-size:19px;
 }
 
+
 /* =======================
    GPS / REALTIMEIRL MAP
 ======================= */
@@ -101,6 +103,7 @@ body,
     z-index:10;
 }
 
+
 /* RealtimeIRL haritası */
 
 .map .rtirlMap{
@@ -125,6 +128,7 @@ body,
     z-index:1;
 }
 
+
 /* İç halka */
 
 .map::before{
@@ -142,6 +146,7 @@ body,
 
     z-index:5;
 }
+
 
 /* =======================
    YEŞİL NEFES ALAN HALKA
@@ -178,11 +183,13 @@ body,
             inset 0 0 18px rgba(52,211,153,.12);
 
     }
+
 }
 
 .map{
     animation:pulseGlow 4s ease-in-out infinite;
 }
+
 
 /* =======================
    CHAT
@@ -208,6 +215,7 @@ body,
         0 0 24px rgba(52,211,153,.18),
         inset 0 0 14px rgba(255,255,255,.03);
 }
+
 
 /* =======================
    HEADER GÖRÜNÜMÜ
@@ -237,6 +245,7 @@ body,
 .info{
     font-size:clamp(15px,.95vw,19px);
 }
+
 
 /* =======================
    RESPONSIVE
@@ -276,6 +285,7 @@ body,
     }
 }
 
+
 /* =======================
    FOLLOW / SUB / GIFT
 ======================= */
@@ -291,4 +301,148 @@ body,
     height:38px;
 
     font-size:22px;
+}
+
+
+/* =======================
+   HARİTA + HIZ KADRANI
+======================= */
+
+.mapArea{
+
+    position:absolute;
+
+    left:30px;
+    bottom:30px;
+
+    width:213px;
+    height:213px;
+
+    z-index:20;
+}
+
+
+/* =======================
+   HARİTA
+======================= */
+
+.mapArea .map{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:213px;
+    height:213px;
+}
+
+
+/* =======================
+   HIZ KADRANI
+======================= */
+
+.speedGauge{
+
+    position:absolute;
+
+    left:-33px;
+    bottom:173px;
+
+    width:82px;
+    height:82px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:3px solid #34d399;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.48);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 0 20px rgba(52,211,153,.35),
+        inset 0 0 16px rgba(52,211,153,.12);
+
+    pointer-events:none;
+
+    z-index:30;
+}
+
+
+/* =======================
+   İÇ KADRAN HALKASI
+======================= */
+
+.speedGauge::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:7px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(52,211,153,.28);
+
+    pointer-events:none;
+}
+
+
+/* =======================
+   HIZ DEĞERİ
+======================= */
+
+.speedValue{
+
+    color:#34d399;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    line-height:1;
+
+    text-shadow:
+        0 0 8px rgba(52,211,153,.55);
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =======================
+   KM/H
+======================= */
+
+.speedUnit{
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    margin-top:5px;
+
+    letter-spacing:.5px;
+
+    text-shadow:
+        1px 1px 3px rgba(0,0,0,.8);
+
+    position:relative;
+
+    z-index:2;
 }
