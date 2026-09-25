@@ -1,16 +1,9 @@
 import Header from "./components/Header";
 
-const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
+const pullKey = "BURAYA_KENDI_PULL_KEYIN";
 
 const rtirlMapUrl =
-  `https://overlays.rtirl.com/leaflet.html` +
-  `?ak6fu9l6rf4x4kav=ak6fu9l6rf4x4kav` +
-  `&access_token=${mapboxToken}` +
-  `&style=mapbox/streets-v11` +
-  `&zoom=5` +
-  `&lang=en` +
-  `&attribution=0` +
-  `&indicatorStyle=eyJoZWlnaHQiOjEyLCJ3aWR0aCI6MTIsImJvcmRlclJhZGl1cyI6NTAsImJhY2tncm91bmRDb2xvciI6ImN5YW4ifQ%3D%3D`;
+  `https://overlays.rtirl.com/generic.html?key=${ak6fu9l6rf4x4kav}&zoom=13&lang=en`;
 
 function App() {
   return (
@@ -22,7 +15,6 @@ function App() {
           className="rtirlMap"
           src={rtirlMapUrl}
           title="RealtimeIRL GPS Map"
-          allow="geolocation"
         />
       </div>
     </div>
