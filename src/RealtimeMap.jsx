@@ -18,7 +18,7 @@ export default function RealtimeMap({ onSpeedChange }) {
       zoomControl: false,
       attributionControl: false,
       center: [36.78, 31.44],
-      zoom: 13,
+      zoom: 17,
     });
 
     L.tileLayer(
@@ -51,7 +51,7 @@ export default function RealtimeMap({ onSpeedChange }) {
 
       const position = [latitude, longitude];
 
-      map.setView(position, 13, {
+      map.setView(position, 17, {
         animate: false,
       });
 
